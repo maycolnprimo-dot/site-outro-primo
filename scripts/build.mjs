@@ -252,6 +252,9 @@ footer{background:var(--navy);color:#D3DCE8;font-size:.92rem;border-top:1px soli
   .cta-band{padding:34px 26px}
   section{padding:54px 0}
   .legal{flex-direction:column}
+  .trust-bar .wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .trust-item{display:flex;align-items:flex-start;text-align:left}
+  .trust-item .ic{margin-top:.15em;flex-shrink:0}
 }
 @media(max-width:620px){
   body{font-size:16px}
@@ -261,7 +264,8 @@ footer{background:var(--navy);color:#D3DCE8;font-size:.92rem;border-top:1px soli
   .stats b{font-size:2.1rem}
   .brand{font-size:1.18rem}
   .topbar .wrap{justify-content:center;text-align:center}
-  .trust-bar .wrap{justify-content:center}
+  .trust-bar .wrap{grid-template-columns:1fr;gap:13px;justify-content:start}
+  .trust-item{width:100%}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 `;
@@ -1034,7 +1038,7 @@ add({
   <div class="wrap two">
     <div>
       <p class="eyebrow">Experiência do Cliente &bull; Conexão Real</p>
-      <h2>O toque humano, a escuta acolhedora e a inteligência analítica de ponta.</h2>
+      <h2>Abordagem humanizada, escuta acolhedora e inteligência analítica de ponta a ponta.</h2>
       <p>Acreditamos profundamente que finanças e negócios tratam, antes de tudo, de pessoas reais e suas famílias. Colocamos a simplicidade, a confiança e a escuta atenta no centro de cada conversa. Sem julgamentos sobre escolhas passadas, sem teorias complicadas e sem planilhas intimidadoras.</p>
       <p>Você é atendido diretamente por quem tem 28 anos de vivência executiva, com o suporte de ferramentas analíticas proprietárias de modelagem e diagnóstico. Essa combinação traz clareza imediata para as suas decisões, permitindo entregar muito mais do que você espera, com tranquilidade e respeito ao seu momento.</p>
       <div class="creds">
