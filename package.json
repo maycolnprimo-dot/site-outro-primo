@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "preview": "npx serve dist"
+    "build:v1": "node scripts/build-v1.mjs",
+    "preview": "npx serve dist",
+    "preview:v1": "npx serve dist-v1"
   }
 }
