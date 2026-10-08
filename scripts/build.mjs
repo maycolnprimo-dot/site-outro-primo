@@ -14,7 +14,6 @@ const HOJE = new Date().toISOString().slice(0, 10);
 const WA = (t) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(t)}`;
 const ROOT = path.resolve(import.meta.dirname, '..');
 const DIST = path.join(ROOT, 'dist');
-const DIST_V1 = path.join(ROOT, 'dist-v1');
 
 // ── Ícones de traço fino e elegante (SVG inline) ───────────────────────────
 const ICONS = {
@@ -76,8 +75,6 @@ p{margin:0 0 1em}a{color:var(--navy)}img{max-width:100%;height:auto;display:bloc
 .topbar .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap;align-items:center}
 .topbar a{color:#F5E8D2;text-decoration:none}.topbar a:hover{text-decoration:underline}
 .topbar span{display:inline-flex;gap:7px;align-items:center}
-.topbar .v-anterior{color:#C5A880;background:rgba(197,168,128,.12);padding:2px 8px;border-radius:4px;font-size:.76rem;text-decoration:none;border:1px solid rgba(197,168,128,.25)}
-.topbar .v-anterior:hover{background:rgba(197,168,128,.25)}
 
 /* cabeçalho */
 header.site{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:25;box-shadow:0 2px 14px rgba(10,25,47,.04)}
@@ -801,8 +798,7 @@ ${SPRITE}
   <div class="wrap">
     <span>${ic('shield')} Consultoria independente · Sem conflito de interesses · Não recebo comissão por produtos nem rebate de corretoras</span>
     <span class="hide-m">
-      <a class="v-anterior" href="/versao-anterior/" title="Ver versão anterior do site para conferência">Versão Anterior (v1)</a>
-      &nbsp;·&nbsp; ${ic('mail')} <a href="mailto:${EMAIL}">${EMAIL}</a>
+      ${ic('mail')} <a href="mailto:${EMAIL}">${EMAIL}</a>
       &nbsp;·&nbsp; ${ic('pin')} Ponta Grossa/PR e online
     </span>
   </div>
@@ -1751,12 +1747,7 @@ for (const p of pages) {
   fs.writeFileSync(path.join(dir, 'index.html'), layout(p));
 }
 
-// Cópia da versão anterior para preview concomitante em /versao-anterior/
-if (fs.existsSync(DIST_V1)) {
-  const dirV1 = path.join(DIST, 'versao-anterior');
-  fs.cpSync(DIST_V1, dirV1, { recursive: true });
-  console.log('OK: Versão anterior (v1) preservada e disponível em dist/versao-anterior/');
-}
+
 
 // Sitemap, Robots e Página 404
 const prio = (u) =>
